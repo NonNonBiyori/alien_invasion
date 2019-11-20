@@ -1,6 +1,6 @@
 import sys
 import pygame
-import bullet
+from bullet import Bullet
 
 def check_events(ai_settings,screen,ship,bullets):
 	''' for print and mouse event '''
@@ -13,7 +13,6 @@ def check_events(ai_settings,screen,ship,bullets):
 			check_keyup_events(event,ship)
 			    
 def check_keydown_events(event,ai_settings,screen,ship,bullets):
-	print(event.key)
 	if event.key == pygame.K_RIGHT:
 		ship.moving_right = True
 	elif event.key == pygame.K_LEFT:
@@ -21,10 +20,8 @@ def check_keydown_events(event,ai_settings,screen,ship,bullets):
 	elif event.key == pygame.K_DOWN:
 		ship.moving_up = True
 	elif event.key == pygame.K_UP:
-		print("K_UP")
 		ship.moving_down = True
 	elif event.key == pygame.K_SPACE:
-		print("K_SPACE")
 		fire_the_hore(ai_settings,screen,ship,bullets)		
 			
 def check_keyup_events(event,ship):

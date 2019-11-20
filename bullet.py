@@ -10,14 +10,14 @@ class Bullet(Sprite):
 		
 		#在（0，0）处设置子弹然后移到正确位置
 		self.rect = pygame.Rect(0,0,ai_settings.bullet_width,
-		           ai_settings_bullet_height)
+		           ai_settings.bullet_height)
 		self.rect.centerx = ship.rect.centerx
 		self.rect.top = ship.rect.top
 		
 		self.y = float(self.rect.y)
 		
 		self.color = ai_settings.bullet_color
-		self.init_speed = ai.settings.bullet_init_speed
+		self.init_speed = ai_settings.bullet_speed_init
 		
 	def update(self):
 		""""移动子弹"""
