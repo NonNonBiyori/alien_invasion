@@ -1,7 +1,7 @@
 import pygame
-from pygame.sprite import Sprite
+#from pygame.sprite import Sprite
 
-class Bullet(Sprite):
+class Bullet(pygame.sprite.Sprite):
 	"""子弹管理类"""
 	
 	def __init__(self,ai_settings,screen,ship):

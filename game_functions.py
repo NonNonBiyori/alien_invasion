@@ -5,9 +5,7 @@ from bullet import Bullet
 def check_events(ai_settings,screen,ship,bullets):
 	''' for print and mouse event '''
 	for event in pygame.event.get():
-		if event.type == pygame.QUIT:
-			sys.exit()
-		elif event.type == pygame.KEYDOWN:
+		if event.type == pygame.KEYDOWN:
 			check_keydown_events(event,ai_settings,screen,ship,bullets)
 		elif event.type == pygame.KEYUP:
 			check_keyup_events(event,ship)
@@ -22,7 +20,9 @@ def check_keydown_events(event,ai_settings,screen,ship,bullets):
 	elif event.key == pygame.K_UP:
 		ship.moving_down = True
 	elif event.key == pygame.K_SPACE:
-		fire_the_hore(ai_settings,screen,ship,bullets)		
+		fire_the_hore(ai_settings,screen,ship,bullets)
+	elif event.key == pygame.K_ESCAPE:
+		sys.exit()		
 			
 def check_keyup_events(event,ship):
 	if event.key == pygame.K_RIGHT:
@@ -35,14 +35,15 @@ def check_keyup_events(event,ship):
 		ship.moving_down = False		
 				
 			
-def updata_screen(ai_settings, screen, ship, bullets):
+def updata_screen(ai_settings, screen, ship, bullets, alien):
 	screen.fill(ai_settings.bg_color)
 	
-	background = pygame.image.load("/home/xujl/python_work/alien_invasion/images/h2513.png")
+	background = pygame.image.load("/home/xujl/python_work/alien_invasion/images/h2513--.png")
 	screen.blit(background,(0,0))
 	for bullet in bullets.sprites():
 		bullet.draw_bullet()
 	ship.blitme()
+	alien.blitme()
 	
 	pygame.display.flip()
 	
