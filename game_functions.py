@@ -38,7 +38,7 @@ def check_keyup_events(event,ship):
 def updata_screen(ai_settings, screen, ship, bullets, alien):
 	screen.fill(ai_settings.bg_color)
 	
-	background = pygame.image.load("/home/xujl/python_work/alien_invasion/images/h2513--.png")
+	background = pygame.image.load("./images/n0401.png")
 	screen.blit(background,(0,0))
 	for bullet in bullets.sprites():
 		bullet.draw_bullet()

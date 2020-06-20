@@ -12,7 +12,7 @@ class Alien(Sprite):
         self.ai_settings = ai_settings
 
         """外星人图像"""
-        self.image = pygame.image.load('/home/xujl/python_work/alien_invasion/images/alien.bmp')
+        self.image = pygame.image.load('./images/alien.bmp')
         self.rect = self.image.get_rect()
 
         """在左上角"""
